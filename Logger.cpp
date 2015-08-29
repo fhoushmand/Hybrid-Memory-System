@@ -82,6 +82,25 @@ namespace HybridSim
 		num_mmio_dropped = 0;
 		num_mmio_remapped = 0;
 
+		// Added params
+		num_dram_read_acc = 0;
+		num_dram_write_acc = 0;
+		num_nvram_read_acc = 0;
+		num_nvram_write_acc = 0;
+
+		hit_rate_dram_read = 0;
+		hit_rate_dram_write = 0;
+		hit_rate_nvram_read = 0;
+		hit_rate_nvram_write = 0;
+
+		migration_from_dram_to_nvram = 0;
+		migration_from_nvram_to_dram = 0;
+
+		disk_swap_to_dram = 0;
+		disk_swap_to_nvram = 0;
+
+		//
+
 
 		// Init the latency histogram.
 		for (uint64_t i = 0; i <= HISTOGRAM_MAX; i += HISTOGRAM_BIN)

@@ -95,7 +95,7 @@ const uint64_t FOURGB = 4294967296; // 1024^3 * 4
 // OVERRIDE_DRAM_SIZE is used to make the dram_size parameter passed to DRAM different than the computed
 // size needed by HybridSim (CACHE_PAGES * PAGE_SIZE) >> 20. 
 // If it is 0, it is ignored.
-#define OVERRIDE_DRAM_SIZE 0
+#define OVERRIDE_DRAM_SIZE 1024
 
 
 // RESTORE_CLEAN is used to simulate a checkpoint of the memory system upon restoring the state.

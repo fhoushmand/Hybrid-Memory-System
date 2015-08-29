@@ -85,6 +85,28 @@ namespace HybridSim
 		uint64_t num_mmio_dropped;
 		uint64_t num_mmio_remapped;
 
+		// Added parameter for ClockDWF and Two LRU algorithm
+
+		uint64_t num_dram_read_acc;
+		uint64_t num_dram_write_acc;
+		uint64_t num_nvram_read_acc;
+		uint64_t num_nvram_write_acc;
+
+		uint64_t hit_rate_dram_read;
+		uint64_t hit_rate_dram_write;
+		uint64_t hit_rate_nvram_read;
+		uint64_t hit_rate_nvram_write;
+
+		uint64_t migration_from_dram_to_nvram;
+		uint64_t migration_from_nvram_to_dram;
+
+		uint64_t disk_swap_to_dram;
+		uint64_t disk_swap_to_nvram;
+
+		//
+
+
+
 		unordered_map<uint64_t, uint64_t> pages_used; // maps page_addr to num_accesses
 
 		// Epoch state (reset at the beginning of each epoch)
