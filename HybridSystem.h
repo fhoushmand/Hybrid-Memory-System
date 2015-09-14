@@ -151,6 +151,24 @@ namespace HybridSim
 
 		unordered_map<uint64_t, cache_line> cache;
 
+		// added params from two LRU:
+
+		typedef std::vector<long> ItemVector;
+		typedef ItemVector::iterator ItemIterator;
+		int pcmReadHit = 0, pcmWriteHit = 0, dramReadHit = 0, dramWriteHit = 0;
+		int pcmOnePerc = 0, pcmFivePerc = 0;
+		int rhit = 0, whit = 0, total = 0, migToDRAM = 0, migToPCM = 0;
+		int readthreshold = 100, writethreshold = 100;
+		long diskToPCM = 0, diskToDRAM = 0;
+		long dramsize, pcmsize;
+		int ratio_;
+		std::vector<long> dramCache;
+		std::vector<long> pcmCache;
+		std::vector<int> readcount;
+		std::vector<int> writecount;
+
+		//
+
 		unordered_map<uint64_t, Pending> dram_pending;
 		unordered_map<uint64_t, Pending> flash_pending;
 
